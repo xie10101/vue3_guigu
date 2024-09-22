@@ -3,3 +3,15 @@ import './style.css'
 import App from './App.vue'
 
 createApp(App).mount('#app')
+
+const a=100
+console.log(a)
+
+function main()
+
+
+{
+console.log('11')
+}
+
+main()
