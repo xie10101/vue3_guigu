@@ -1,30 +1,62 @@
 <script setup lang="ts">
-import HelloWorld from "./components/HelloWorld.vue";
+// import request  from './utils/request';
+// import axios from 'axios'
+import { login } from './api/user';
+// import HelloWorld from './components/HelloWorld.vue';
+// console.log(import.meta.env)
+async function handle(username:string,password:string)
+{
+  try{
+      const result=login({username,password})
+      console.log(result)
+      console.log('111')
+  }catch(error){
+    console.log(error)
+  }
+}
+handle('admin','1111')
+
+// request({
+//   url:'/user/login',
+//   method:'post',
+//   data:{
+//     username:'admin',
+//     password:'1111'
+//   }
+// }).then(res=>{
+//   console.log(res)
+// })
+
 </script>
 
 <template>
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+    <svg style="width: 40px; height: 30px; background-color: pink">
+      <use xlink:href="#icon-phone"></use>
+    </svg>
+    <el-button type="primary" icon="search">查询</el-button>
+    <el-button type="success" icon="check">检查</el-button>
+    <!-- HelloWorld></HelloWorld> -->
+    <div class=".test">
+      <h1>huhu</h1>
+    </div>
+    <div>
+      <p>默认样式</p>
+      <div>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+<style scoped lang="scss">
+
+  h1 {
+    color:$color;
+  }
+
 </style>
