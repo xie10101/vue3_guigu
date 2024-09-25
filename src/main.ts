@@ -9,7 +9,7 @@ import "virtual:svg-icons-register";
 // 国际化引入
 import { zhCn } from "element-plus/es/locales.mjs";
 //引入全局样式
-import '@/style/index.scss'
+import "@/style/index.scss";
 // 引入组件样式
 // 引入element-puls自带的图标：
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
