@@ -11,6 +11,9 @@ import { zhCn } from "element-plus/es/locales.mjs";
 //引入全局样式
 import "@/style/index.scss";
 // 引入组件样式
+import router from "./router";
+// 引入路由
+
 // 引入element-puls自带的图标：
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 const app = createApp(App);
@@ -20,7 +23,15 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 // （整体引用）自动全局导入
 
 import App from "./App.vue";
+//导入仓库实例
+import pinia from "./store";
+
+//安装仓库
+app.use(pinia);
+
 app.use(ElementPlus, {
   locale: zhCn,
 });
+app.use(router)
 app.mount("#app");
+

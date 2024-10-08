@@ -5,7 +5,8 @@ export interface loginForm {
 }
 // 会返会的数据可以使用接口设置类型（使用any也可以）
 interface dataType {
-  token: string;
+token?: string;
+message?:string
 }
 
 //登录接口-如果成功返回数据类型：

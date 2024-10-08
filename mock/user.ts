@@ -36,10 +36,12 @@ export default [
       );
       //没有用户返回失败信息
       if (!checkUser) {
+        // 需要对数据进行类型检查
         return { code: 201, data: { message: "账号或者密码不正确" } };
       }
-      //如果有返回成功信息
+      //如果正确 返回成功信息
       const { token } = checkUser;
+        // 需要对数据进行类型检查
       return { code: 200, data: { token } };
     },
   },
