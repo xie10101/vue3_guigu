@@ -49,12 +49,9 @@ handle("admin", "1111");
       </div>
     </div>
   </div> -->
-<div>
-  <router-view></router-view>
-
-</div>
+  <div>
+    <router-view></router-view>
+  </div>
 </template>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

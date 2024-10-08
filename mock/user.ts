@@ -41,7 +41,7 @@ export default [
       }
       //如果正确 返回成功信息
       const { token } = checkUser;
-        // 需要对数据进行类型检查
+      // 需要对数据进行类型检查
       return { code: 200, data: { token } };
     },
   },

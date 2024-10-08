@@ -1,19 +1,21 @@
 <template>
-<div class="common-layout">
+  <div class="common-layout">
     <el-container>
       <el-aside class="menu_aside">
         <logo></logo>
         <!-- 使用 -->
-        <el-scrollbar class="scroll"> 
-        <Menus :menulist="menulist"></Menus>
-
+        <el-scrollbar class="scroll">
+          <Menus :menulist="menulist"></Menus>
         </el-scrollbar>
       </el-aside>
       <el-container class="menu_contain">
         <el-header class="menu_head">Header</el-header>
         <el-main class="menu_main">
           <!-- 此布局设置组件--默认存在滚动轴- -->
-          <div class="main_layout" style="height:1000px;background-color: red;">
+          <div
+            class="main_layout"
+            style="height: 1000px; background-color: red"
+          >
             <router-view></router-view>
           </div>
         </el-main>
@@ -23,51 +25,45 @@
 </template>
 
 <script setup>
-import { ElNotification} from 'element-plus';
-import { getTime } from '../../utils/getTime';
-import logo from './components/logo.vue';
-import Menus from "./components/menu.vue"
-import useloginStore from '../../store/modules/user';
+import { ElNotification } from "element-plus";
+import { getTime } from "../../utils/getTime";
+import logo from "./components/logo.vue";
+import Menus from "./components/menu.vue";
+import useloginStore from "../../store/modules/user";
 //如何设置消息提示框打开位置
-ElNotification(
-  {
-    title:getTime(),
-    message:"欢迎来到硅谷甄选",
-    type:"success"
-  }
-)
-console.log(getTime())
+ElNotification({
+  title: getTime(),
+  message: "欢迎来到硅谷甄选",
+  type: "success",
+});
+console.log(getTime());
 
 //获取路由数组;
-const loginStore=useloginStore()
-const menulist=loginStore.menuRoutes
-
+const loginStore = useloginStore();
+const menulist = loginStore.menuRoutes;
 </script>
 
 <style lang="scss" scoped>
-.menu_aside
-{
+.menu_aside {
   /* 宽度设置为全局变量 */
   width: $bar_aside_width;
   height: 100vh;
   background-color: $bar_aside_color;
   scrollbar-width: none;
 }
-.menu_contain
-{
+.menu_contain {
   width: 100vw-$bar_aside_width;
   background-color: pink;
   height: 100vh;
 }
-.menu_head
-{  width: 100vw-$bar_aside_width;
+.menu_head {
+  width: 100vw-$bar_aside_width;
   height: $bar_head_height;
   background-color: skyblue;
 }
-.menu_main
-{
+.menu_main {
   width: 100vw-$bar_aside_width;
-  height:100vh-$bar_head_height;
+  height: 100vh-$bar_head_height;
   background-color: rgb(227, 172, 70);
   padding: 20px;
 }

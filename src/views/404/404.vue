@@ -1,11 +1,7 @@
 <template>
-  <div> 404界面</div>
+  <div>404界面</div>
 </template>
 
-<script setup>
+<script setup></script>
 
-</script>
-
-<style>
-
-</style>
+<style></style>
