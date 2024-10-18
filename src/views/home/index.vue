@@ -1,8 +1,9 @@
 <template>
+  <!-- 首页菜单+上下边框的设置 -->
   <div class="common-layout">
     <el-container>
       <el-aside class="menu_aside">
-        <logo></logo>
+        <LOGO></LOGO>
         <!-- 使用 -->
         <el-scrollbar class="scroll">
           <Menus :menulist="menulist"></Menus>
@@ -16,7 +17,7 @@
             class="main_layout"
             style="height: 1000px; background-color: red"
           >
-            <router-view></router-view>
+            <MAIN></MAIN>
           </div>
         </el-main>
       </el-container>
@@ -24,13 +25,20 @@
   </div>
 </template>
 
-<script setup>
+<script setup >
 import { ElNotification } from "element-plus";
 import { getTime } from "../../utils/getTime";
-import logo from "./components/logo.vue";
-import Menus from "./components/menu.vue";
+import LOGO from "./components/logo.vue";
+import MAIN from "./components/main.vue";
+import Menus from "./components/menu.vue"
 import useloginStore from "../../store/modules/user";
 //如何设置消息提示框打开位置
+
+defineOptions(
+  {
+    name:"home"
+  }
+)
 ElNotification({
   title: getTime(),
   message: "欢迎来到硅谷甄选",

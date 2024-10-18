@@ -28,27 +28,7 @@ handle("admin", "1111");
 </script>
 
 <template>
-  <!-- <div>
-    <svg style="width: 40px; height: 30px; background-color: pink">
-      <use xlink:href="#icon-phone"></use>
-    </svg>
-    <el-button type="primary" icon="search">查询</el-button>
-    <el-button type="success" icon="check">检查</el-button>
 
-    <div class=".test">
-      <h1>huhu</h1>
-    </div>
-    <div>
-      <p>默认样式</p>
-      <div>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
-    </div>
-  </div> -->
   <div>
     <router-view></router-view>
   </div>

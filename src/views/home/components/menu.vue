@@ -2,11 +2,11 @@
   <!-- 此组件为根据路由动态生成的菜单 -->
   <el-menu class="menu">
     <div v-for="(item, index) in props.menulist" :key="index">
-      <template v-if="!item.children">
+      <template v-if="!item.children" >
         <el-menu-item
           :index="item.path"
           v-if="!item.meta.hidden"
-          @click="gotoroute"
+          @click="goToRoute"
         >
           <!-- 存在children 则将菜单隐藏 -->
           <template #title>
@@ -19,10 +19,11 @@
         </el-menu-item>
       </template>
 
-      <template v-if="item.children && item.children.length == 1">
+      <template v-if="item.children && item.children.length == 1" >
         <el-menu-item
           v-if="!item.children[0].meta.hidden"
           :index="item.children[0].path"
+          @click="goToRoute"
         >
           <template #title>
             <el-icon>
@@ -35,7 +36,7 @@
 
       <!-- 两个及以上子路由-->
       <!-- 能不能使用嵌套v-for -->
-      <el-sub-menu v-if="item.children && item.children.length >= 2">
+      <el-sub-menu v-if="item.children && item.children.length >= 2"  :index="item.path" >
         <template #title>
           <el-icon>
             <component :is="item.meta.icon"></component>
@@ -49,15 +50,22 @@
   </el-menu>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts" >
 //递归组件的组件名需要与文件名相同？
-defineOptions({
-  name: "Menus",
-});
+defineOptions(
+  {
+    name:"Menus"
+  }
+)
 const props = defineProps(["menulist"]);
-const gotoroute = (e: any) => {
+import { useRouter } from 'vue-router';
+const route=useRouter()
+const goToRoute = (e: any) => {
+  // e.index----每个菜单绑定index为path
   console.log(e.index);
+  route.push(e.index)
 };
+
 </script>
 
 <style lang="scss">

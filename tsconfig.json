@@ -5,8 +5,14 @@
       "@/*": ["src/*"]
     },
     "lib": ["es2020", "dom"],
-    "skipLibCheck": true
+    "skipLibCheck": true,
+  // "extensions": [".ts", ".js", ".json", ".vue"]
+  "moduleResolution": "node",  
+  "esModuleInterop": true,  
+  "allowSyntheticDefaultImports": true,  
+  "resolveJsonModule": true,  
   },
+
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
