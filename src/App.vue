@@ -28,7 +28,6 @@ handle("admin", "1111");
 </script>
 
 <template>
-
   <div>
     <router-view></router-view>
   </div>

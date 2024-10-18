@@ -1,13 +1,7 @@
 <template>
-    <div>
-      用户管理
-    </div>
-  </template>
-  
-  <script setup lang="ts">
-  
-  </script>
-  
-  <style scoped lang="scss">  
-  
-  </style>
+  <div>用户管理</div>
+</template>
+
+<script setup lang="ts"></script>
+
+<style scoped lang="scss"></style>

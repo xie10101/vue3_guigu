@@ -1,13 +1,7 @@
 <template>
-    <div>
-      spu管理
-    </div>
-  </template>
-  
-  <script setup lang="ts">
-  
-  </script>
-  
-  <style scoped lang="scss">  
-  
-  </style>
+  <div>spu管理</div>
+</template>
+
+<script setup lang="ts"></script>
+
+<style scoped lang="scss"></style>

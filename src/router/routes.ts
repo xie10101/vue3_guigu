@@ -1,4 +1,3 @@
-
 // import { menuroutes } from './routes2'
 export const baseroutes = [
   {
@@ -20,7 +19,6 @@ export const baseroutes = [
       title: "登陆页",
       hidden: true,
     },
-   
   },
   {
     path: "/home",
@@ -34,124 +32,123 @@ export const baseroutes = [
       icon: "Plus",
     },
     children: [
-    // homepage:
-    {
-      path:"/homepage",
-      component:()=>import("../views/homepage/index.vue"),
-      name:"homepage",
-      meta:{
-        title:"首页",
-        icon:"HomeFilled"
-      }
-    } 
-
+      // homepage:
+      {
+        path: "/homepage",
+        component: () => import("../views/homepage/index.vue"),
+        name: "homepage",
+        meta: {
+          title: "首页",
+          icon: "HomeFilled",
+        },
+      },
     ],
   },
-// 数据大屏：
-{
-  path:"/platform",
-  component:()=>import("../views/platform/index.vue"),
-  name:"platform",
-  meta:{
-    title:"数据大屏",
-    hidden:false,
-    icon:"Apple"
-  }
-},
-//权限管理：
-{
-  path:"/user",
-  component:()=>import("../views/home/index.vue"),
-  name:"user",
-  meta:{
-    title:"权限管理",
-    hidden:false,
-    icon:"Lock"
-  },
-  children:[
-    {
-      path:"/users",
-      component:()=>import("../views/user/users/index.vue"),
-      name:"users",
-      meta:{
-        title:"用户管理",
-        hidden:false,
-        icon:"User"
-      }
+  // 数据大屏：
+  {
+    path: "/platform",
+    component: () => import("../views/platform/index.vue"),
+    name: "platform",
+    meta: {
+      title: "数据大屏",
+      hidden: false,
+      icon: "Apple",
     },
-    {
-      path:"/role",
-      component:()=>import("../views/user/role/index.vue"),
-      meta:{
-        title:"角色管理",
-        hidden:false,
-        icon:"UserFilled"
-      }
+  },
+  //权限管理：
+  {
+    path: "/user",
+    component: () => import("../views/home/index.vue"),
+    name: "user",
+    meta: {
+      title: "权限管理",
+      hidden: false,
+      icon: "Lock",
     },
-    {
-      path:"/menu",
-      component:()=>import("../views/user/menu/index.vue"),
-      meta:{
-        title:"菜单管理",
-        hidden:false,
-        icon:"menu"
-      }
-    }
-  ]
-},
-// 商品管理
-{
-  path:"/product",
-  component:()=>import("../views/home/index.vue"),
-  name:"product",
-  meta:{
-    title:"商品管理",
-    hidden:false,
-    icon:"Goods"
+    children: [
+      {
+        path: "/users",
+        component: () => import("../views/user/users/index.vue"),
+        name: "users",
+        meta: {
+          title: "用户管理",
+          hidden: false,
+          icon: "User",
+        },
+      },
+      {
+        path: "/role",
+        component: () => import("../views/user/role/index.vue"),
+        meta: {
+          title: "角色管理",
+          hidden: false,
+          icon: "UserFilled",
+        },
+      },
+      {
+        path: "/menu",
+        component: () => import("../views/user/menu/index.vue"),
+        meta: {
+          title: "菜单管理",
+          hidden: false,
+          icon: "menu",
+        },
+      },
+    ],
   },
- children:[
+  // 商品管理
   {
-    path:"/attr",
-    component:()=>import("../views/product/attr/index.vue"),
-    name:"attr",
-    meta:{
-      title:"属性管理",
-      hidden:false,
-      icon:"Coin"
-    }
+    path: "/product",
+    component: () => import("../views/home/index.vue"),
+    name: "product",
+    meta: {
+      title: "商品管理",
+      hidden: false,
+      icon: "Goods",
+    },
+    children: [
+      {
+        path: "/attr",
+        component: () => import("../views/product/attr/index.vue"),
+        name: "attr",
+        meta: {
+          title: "属性管理",
+          hidden: false,
+          icon: "Coin",
+        },
+      },
+      {
+        path: "/trademark",
+        component: () => import("../views/product/trademark/index.vue"),
+        name: "trademark",
+        meta: {
+          title: "商标管理",
+          hidden: false,
+          icon: "Goods",
+        },
+      },
+      {
+        path: "/sku",
+        component: () => import("../views/product/sku/index.vue"),
+        name: "sku",
+        meta: {
+          title: "SKU管理",
+          hidden: false,
+          icon: "Pear",
+        },
+      },
+      {
+        path: "/spu",
+        component: () => import("../views/product/spu/index.vue"),
+        name: "spu",
+        meta: {
+          title: "SPU管理",
+          hidden: false,
+          icon: "Apple",
+        },
+      },
+    ],
   },
-  {
-    path:"/trademark",
-    component:()=>import("../views/product/trademark/index.vue"),
-    name:"trademark",
-    meta:{
-      title:"商标管理",
-      hidden:false,
-      icon:"Goods"
-    }
-  },
-  {
-    path:"/sku",
-    component:()=>import("../views/product/sku/index.vue"),
-    name:"sku",
-    meta:{
-      title:"SKU管理",
-      hidden:false,
-      icon:"Pear"
-    }
-  },
-  {
-    path:"/spu",
-    component:()=>import("../views/product/spu/index.vue"),
-    name:"spu",
-    meta:{
-        title:"SPU管理",
-        hidden:false,
-        icon:"Apple"
-    }
-  },
-]
-},
 
   {
     path: "/404",

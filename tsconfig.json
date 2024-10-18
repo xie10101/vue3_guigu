@@ -6,11 +6,11 @@
     },
     "lib": ["es2020", "dom"],
     "skipLibCheck": true,
-  // "extensions": [".ts", ".js", ".json", ".vue"]
-  "moduleResolution": "node",  
-  "esModuleInterop": true,  
-  "allowSyntheticDefaultImports": true,  
-  "resolveJsonModule": true,  
+    // "extensions": [".ts", ".js", ".json", ".vue"]
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true
   },
 
   "files": [],

@@ -8,8 +8,8 @@
 <script lang="ts" setup>
 import slots from "../../settings/logo";
 defineOptions({
-  name:"LOGO"
-})
+  name: "LOGO",
+});
 </script>
 
 <style lang="scss" scoped>

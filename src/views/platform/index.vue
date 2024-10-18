@@ -3,17 +3,15 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted } from 'vue';
+import { onMounted } from "vue";
 
 // import { defineOptions } from 'vue';
 // defineOptions({
 // name:"platform"
 // })
-onMounted(()=>{
-    console.log('asd')
-})
+onMounted(() => {
+  console.log("asd");
+});
 </script>
 
-<style  lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
