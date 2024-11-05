@@ -6,7 +6,11 @@ import { defineStore } from "pinia";
 import { reactive, ref } from "vue";
 import { reqLogin, reqUserInfo, reqLogout } from "../../api/user";
 import { ElMessage } from "element-plus";
-import { loginFormData,loginResponseData,userInfoResponseData } from "../../api/user/type";
+import {
+  loginFormData,
+  loginResponseData,
+  userInfoResponseData,
+} from "../../api/user/type";
 import router from "../../router";
 import type { RouteRecordRaw } from "vue-router";
 import { baseroutes } from "../../router/routes";
@@ -25,7 +29,7 @@ const useloginStore = defineStore(
       try {
         // const $route = useRoute();
         // 设置返回数据的类型验证：
-        const result:loginResponseData = await reqLogin(logindatas);
+        const result: loginResponseData = await reqLogin(logindatas);
         // 登录请求：成功200 ->
         // 登录请求：失败203 ->
         const Message = ref<string>();
@@ -73,7 +77,7 @@ const useloginStore = defineStore(
     //获取用户信息
     async function getInfo() {
       try {
-        const result:userInfoResponseData = await reqUserInfo();
+        const result: userInfoResponseData = await reqUserInfo();
         const data = result.data; //data中返回按钮权限与路由权限
         // 判断获取失败与否 用信息中code判断--401--token过期--  200正常；
         if (result.code == 200) {
@@ -113,7 +117,7 @@ const useloginStore = defineStore(
       userinfos,
       outlogin,
     };
-  }
+  },
   //小仓库存储数据的地方
 );
 export default useloginStore;

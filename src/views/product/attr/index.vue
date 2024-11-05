@@ -50,5 +50,4 @@
 
 <style scoped lang="scss">
 // 宽度不能写死；
-
 </style>

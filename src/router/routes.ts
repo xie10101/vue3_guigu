@@ -65,7 +65,7 @@ export const baseroutes = [
       hidden: false,
       icon: "Lock",
     },
-    redirect:"/users",
+    redirect: "/users",
     children: [
       {
         path: "/users",
@@ -107,7 +107,7 @@ export const baseroutes = [
       hidden: false,
       icon: "Goods",
     },
-    redirect:"/attr",
+    redirect: "/attr",
     children: [
       {
         path: "/attr",

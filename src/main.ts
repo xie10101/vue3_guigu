@@ -26,7 +26,7 @@ import App from "./App.vue";
 import pinia from "./store";
 
 //路由鉴权文件的配置：
-import './permisstion';
+import "./permisstion";
 //安装仓库
 app.use(pinia);
 

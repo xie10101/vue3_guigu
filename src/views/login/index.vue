@@ -46,7 +46,7 @@
 <script setup lang="ts">
 import type { FormInstance, FormRules } from "element-plus";
 import { ref, reactive } from "vue";
-import {  ElMessage } from "element-plus";
+import { ElMessage } from "element-plus";
 import useloginStore from "../../store/modules/user";
 // import { useRoute,useRouter } from "vue-router";
 // import { storeToRefs } from 'pinia';
@@ -97,15 +97,15 @@ const submitForm = (formEl: FormInstance | undefined) => {
         message: "校验成功",
         type: "success",
       });
-      
+
       await loginstore.loginpost(ruleForm);
       // 一下代码并未执行；
-    //  const $route = useRoute();
-    //  const router = useRouter();
-    //  const redirect = $route?.query?.redirect;
-    //  push无法使用
-    //  router.push({ path: (redirect as string) || "/home" });
-        // 定言--可用类型多的变量被赋值给可用类型少的变量时 应将 多变量定言为固定类型变量      
+      //  const $route = useRoute();
+      //  const router = useRouter();
+      //  const redirect = $route?.query?.redirect;
+      //  push无法使用
+      //  router.push({ path: (redirect as string) || "/home" });
+      // 定言--可用类型多的变量被赋值给可用类型少的变量时 应将 多变量定言为固定类型变量
     } else {
       console.log("登录校验失败！！");
       ElMessage({

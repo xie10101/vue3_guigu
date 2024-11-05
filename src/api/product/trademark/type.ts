@@ -4,7 +4,7 @@ export interface ResponseData {
   code: number;
   message: string;
   ok: boolean;
-  data?:object
+  data?: object;
 }
 export interface TradeMark {
   //已有品牌存在id 新增没有--此处可选链的作用--如果

@@ -6,10 +6,8 @@
 </template>
 
 <script setup lang="ts">
-import useloginStore from '../../store/modules/user';
-const loginStore=useloginStore()
-
+import useloginStore from "../../store/modules/user";
+const loginStore = useloginStore();
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

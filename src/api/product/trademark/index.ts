@@ -19,7 +19,7 @@ enum API {
 //limit：获取几个已有品牌的数据
 export const reqHasTrademark = (page: number, limit: number) =>
   request.get<any, TradeMarkResponseData>(
-    API.TRADEMARK_URL + `/${page}/${limit}`
+    API.TRADEMARK_URL + `/${page}/${limit}`,
   );
 
 //添加与更新接口在一个函数中使用： --请求方式不同，请求参数一致：

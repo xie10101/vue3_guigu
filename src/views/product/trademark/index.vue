@@ -207,7 +207,7 @@ const getHasTrademark = async (pager = 1) => {
   pageNo.value = pager; //回调函数执行时前期参数？之后带？
   let result: TradeMarkResponseData = await reqHasTrademark(
     pageNo.value,
-    limit.value
+    limit.value,
   );
   if (result.code == 200) {
     //存储已有品牌的总个数
@@ -278,7 +278,7 @@ const beforeAvatarUpload: UploadProps["beforeUpload"] = (rawFile) => {
 // 上传成功后的回调：
 const handleAvatarSuccess: UploadProps["onSuccess"] = (
   response,
-  uploadFile
+  uploadFile,
 ) => {
   // response --上传图片后端返回的数据响应信息
   console.log(response);
@@ -341,7 +341,7 @@ const confirmRemove = async (id: number) => {
       message: "删除品牌成功",
     });
     getHasTrademark(
-      trademarkArr.value.length > 1 ? pageNo.value : pageNo.value - 1
+      trademarkArr.value.length > 1 ? pageNo.value : pageNo.value - 1,
     ); //回到第一页
   } else {
     ElMessage({

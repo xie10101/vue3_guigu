@@ -14,20 +14,21 @@
 defineOptions({
   name: "MAIN",
 });
-import useTabbarStore from '../../../store/setting';
-let TabbarStore=useTabbarStore()
-import { nextTick, ref, watch } from 'vue';
+import useTabbarStore from "../../../store/setting";
+let TabbarStore = useTabbarStore();
+import { nextTick, ref, watch } from "vue";
 //使用flag变量控制组件的挂载与销毁
-let flag=ref<boolean>(true);
-watch(()=>TabbarStore.refresh,
-()=>{
-  console.log('122');
-  flag.value=false
-  nextTick(()=>{
-    flag.value=true
-  })
-}
-)
+let flag = ref<boolean>(true);
+watch(
+  () => TabbarStore.refresh,
+  () => {
+    console.log("122");
+    flag.value = false;
+    nextTick(() => {
+      flag.value = true;
+    });
+  },
+);
 </script>
 
 <style scoped lang="scss">
