@@ -1,3 +1,5 @@
+<!-- @format -->
+
 <template>
   <!-- el-row 与div盒子属性一致-->
   <div class="login_container">
@@ -44,8 +46,9 @@
 <script setup lang="ts">
 import type { FormInstance, FormRules } from "element-plus";
 import { ref, reactive } from "vue";
-import { ElMessage } from "element-plus";
+import {  ElMessage } from "element-plus";
 import useloginStore from "../../store/modules/user";
+// import { useRoute,useRouter } from "vue-router";
 // import { storeToRefs } from 'pinia';
 let loginstore = useloginStore();
 //使用仓库的变量或方法时可以使用.运算符使用或者对数据进行解构；
@@ -87,14 +90,22 @@ const rules = reactive<FormRules<typeof ruleForm>>({
 
 const submitForm = (formEl: FormInstance | undefined) => {
   if (!formEl) return;
-  formEl.validate((valid) => {
+  formEl.validate(async (valid) => {
     if (valid) {
       console.log("登录校验成功！");
       ElMessage({
         message: "校验成功",
         type: "success",
       });
-      loginstore.loginpost(ruleForm);
+      
+      await loginstore.loginpost(ruleForm);
+      // 一下代码并未执行；
+    //  const $route = useRoute();
+    //  const router = useRouter();
+    //  const redirect = $route?.query?.redirect;
+    //  push无法使用
+    //  router.push({ path: (redirect as string) || "/home" });
+        // 定言--可用类型多的变量被赋值给可用类型少的变量时 应将 多变量定言为固定类型变量      
     } else {
       console.log("登录校验失败！！");
       ElMessage({

@@ -1,6 +1,7 @@
 // 进行axios二次封装：使用请求拦截器与响应拦截器：
 import axios from "axios";
 import { ElMessage } from "element-plus";
+// import useloginStore from "../store/modules/user";
 //创建axios实例：--create方法--（基础配置：基础路径，超市的时间）
 const request = axios.create({
   //基础路径
@@ -11,7 +12,22 @@ const request = axios.create({
 //第二步：request实例添加请求与响应拦截器
 request.interceptors.request.use((config) => {
   // config配置对象中存在headers属性请求头,经常给服务器携带公共参数
+// 请求头携带的两种方式
+//一:
   // 常常调用 配置对象中请求头携带 token验证
+  const token=localStorage.getItem('TOKEN');
+  //将token配置到请求头中；
+  if(token)//undefined ,null代表0-假
+  {  
+    //属性名为--Authorization 或者 token
+    config.headers.token=token 
+  }
+//二 、  
+    // const loginStore=useloginStore()
+    // if(loginStore.token)
+    // {
+    //   config.headers.token=loginStore.token
+    // }
   //返回 config
   return config;
 });

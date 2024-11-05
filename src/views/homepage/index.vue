@@ -1,7 +1,15 @@
 <template>
-  <div>此组件为菜单-主页</div>
+  <div class="body">
+    <div>{{ loginStore.userinfos.username }}</div>
+    <el-avatar shape="square" :size="30" :src="loginStore.userinfos.avatar" />
+  </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import useloginStore from '../../store/modules/user';
+const loginStore=useloginStore()
 
-<style scoped lang="scss"></style>
+</script>
+
+<style scoped lang="scss">
+</style>

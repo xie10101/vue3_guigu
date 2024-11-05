@@ -1,7 +1,7 @@
 <template>
   <div class="logo">
     <img class="img" :src="slots.logo" alt="" />
-    <div class="title">{{ slots.title }}</div>
+    <div class="title" v-if="!TabbarStore.fold"> {{ slots.title }}</div>
   </div>
 </template>
 
@@ -10,6 +10,8 @@ import slots from "../../settings/logo";
 defineOptions({
   name: "LOGO",
 });
+import useTabbarStore from "../../../store/setting";
+const TabbarStore =useTabbarStore()
 </script>
 
 <style lang="scss" scoped>

@@ -13,7 +13,6 @@ import "@/style/index.scss";
 // 引入组件样式
 import router from "./router";
 // 引入路由
-
 // 引入element-puls自带的图标：
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 const app = createApp(App);
@@ -26,6 +25,8 @@ import App from "./App.vue";
 //导入仓库实例
 import pinia from "./store";
 
+//路由鉴权文件的配置：
+import './permisstion';
 //安装仓库
 app.use(pinia);
 

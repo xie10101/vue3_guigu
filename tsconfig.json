@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    //代理配置？
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
