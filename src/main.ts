@@ -1,3 +1,5 @@
+/** @format */
+
 import { createApp } from "vue";
 // import "./style.css";
 // 引入element-plus 中的ElementPlus组件包
@@ -15,6 +17,8 @@ import router from "./router";
 // 引入路由
 // 引入element-puls自带的图标：
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
+//引入全局组件：//全局引入存在问题
+import Category from "./components/Category/index.vue";
 const app = createApp(App);
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component);
@@ -35,3 +39,7 @@ app.use(ElementPlus, {
 });
 app.use(router);
 app.mount("#app");
+
+export default {
+  Category,
+};
