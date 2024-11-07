@@ -122,7 +122,7 @@ watch(
     } else {
       getAttrs();
     }
-  }
+  },
 );
 //监视 watch--
 // 结构失败
@@ -132,7 +132,7 @@ const getAttrs = async () => {
   const result = await reqAttrs(
     CategoryStore.selected_c1,
     CategoryStore.selected_c2,
-    CategoryStore.selected_c3
+    CategoryStore.selected_c3,
   );
   if (result.code == 200) {
     attrslist.value = result.data;

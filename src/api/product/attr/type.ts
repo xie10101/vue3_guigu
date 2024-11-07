@@ -23,17 +23,16 @@ export interface CategoryResponseData extends ResponseData {
 
 export interface CategoryList {
   id?: number;
-  attrName: string;//属性名称
-  categoryId?: number;//三级分类id
-  categoryLevel: number;//3
+  attrName: string; //属性名称
+  categoryId?: number; //三级分类id
+  categoryLevel: number; //3
   attrValueList: AttrsList[];
 }
 
 export interface AttrsList {
-  id?: number;//
-  valueName: string;//属性值
-  attrId?: number;//属性id
-
+  id?: number; //
+  valueName: string; //属性值
+  attrId?: number; //属性id
 }
 
 // 定义获取属性类型：

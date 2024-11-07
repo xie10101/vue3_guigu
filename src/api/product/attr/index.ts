@@ -28,7 +28,7 @@ export const reqC3 = (category2?: number) =>
 export const reqAttrs = (
   category1?: number,
   category2?: number,
-  category3?: number
+  category3?: number,
 ) =>
   request.get<any, any>(API.ATTRS + `${category1}/${category2}/${category3}`);
 
